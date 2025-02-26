@@ -15,7 +15,7 @@ class SmsServiceProvider extends ServiceProvider
             return new SmsService();
         });
 
-        $this->mergeConfigFrom(__DIR__ . '/../config/sms.php', 'sms');
+        $this->mergeConfigFrom(__DIR__ . '/Config/sms.php', 'sms');
     }
 
     /**
@@ -24,7 +24,7 @@ class SmsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/sms.php' => config_path('sms.php'),
+            __DIR__ . '/Config/sms.php' => config_path('sms.php'),
         ], 'sms');
     }
 }
